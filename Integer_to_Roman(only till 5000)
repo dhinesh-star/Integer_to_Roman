@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+#include <string.h>
+void convert(int A)
+{
+    int i,j,k1=0;
+    char B[15][4]={"V-","IV-","M","CM","D","CD","C","XC","L","XL","X","IX","V","I"};
+    int C[]={5000,4000,1000,900,500,400,100,90,50,40,10,9,5,1};
+    char D[100]={'\0'};
+    while(A>0)
+    {
+        for(i=0;i<sizeof(C);i++)
+        {
+            if(C[i]<=A)
+            {
+                strcat(D,B[i]);
+                //cout<<D;
+                break;
+            }
+        }
+        A=A-C[i];
+    }
+    cout<<D;
+}
+int main()
+{
+    int A;
+    cout<<"Enter the number";
+    cin>>A;
+    convert(A);
+}
